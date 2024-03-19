@@ -74,5 +74,30 @@ const students = [
 ];
 
 const graduatedStudents = (listOfStudents) => {
-//Implement function
-};
+  // Implement function
+  // You can’t use dot or square bracket notation to solve this problem. We want you to practice applying your new destructuring knowledge to this function
+
+  // declare an empty array
+  let results = []
+  
+
+  // Look through the list of student
+    listOfStudents.forEach(({ name, email, graduated }) => {
+
+  // create messages element
+  // Charina has not graduated yet, no diploma will be sent' to equal 'Charina has not graduated yet, no diploma will be sent.
+  // Angela has graduated and their diploma will be sent to angela@example.com.
+    const graduatedMessage = `${name} has graduated and their diploma will be sent to ${email}.`
+    const notGraduatedMessage = `${name} has not graduated yet, no diploma will be sent.`
+
+  // If a student has graduated, then your function should output a string literal informing you that the student has graduated and their diploma has been sent to their email
+      if (graduated) {
+        return results.push(graduatedMessage)
+      }
+  // If they haven’t, the function should output a string literal informing you that the student has not graduated and no diploma will be sent
+      return results.push(notGraduatedMessage)
+    });
+    return results;
+  };
+
+  graduatedStudents(students);
